@@ -1,0 +1,19 @@
+@import '/node_modules/fontawesome-free/css/all.min.css';
+
+:root {
+  font-family: "Secular One";
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-gutter: 10px;
+  scrollbar-color: #7a625f #2C0600;
+}
+
+body {
+  background-image: url("./assets/backdrop.png");
+  background-repeat: repeat-y;
+}
