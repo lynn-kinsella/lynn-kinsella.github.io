@@ -10,7 +10,6 @@ interface modalProps {
 
 export interface modalData {
     name: string;
-    desc: string[];
     id: number;
     show: boolean;
 }
@@ -49,35 +48,33 @@ function ProjectModal({ props, exitModal }: modalProps) {
         }
     }
 
-    if (props["show"]) {
-        return (
-            <div className="floatingModalContainer" onClick={closeModal}>
-                <div className="projectModalContainer">
-                    <div className="projectModalTopRow">
-                        <div className="projectModalTitle">{project ? project.title : "Loading..."}</div>
-                        <div className="projectModalExit" onClick={closeModal}>X</div>
-                    </div>
-                    {project ? (
-                        <div className="projectModalBody">
-                            {imageUrl != undefined && (
-                                <div className="projectModalImage">
-                                    <img src={imageUrl} alt="Loading..." />
-                                </div>
-                            )}
-                            <div className="projectModalSubheading">
-                                {project.subheading}
-                            </div>
-                            <div className="projectModalText">
-                                {project.bodyParagraphs.map((para: string) => {
-                                    return (<p>{para}</p>)
-                                })}
-                            </div>
-                        </div>) : <Loading></Loading>
-                    }
+    return (
+        <div className="floatingModalContainer" onClick={closeModal} >
+            <div className="projectModalContainer">
+                <div className="projectModalTopRow">
+                    <div className="projectModalTitle">{project ? project.title : "Loading..."}</div>
+                    <div className="projectModalExit" onClick={closeModal}>X</div>
                 </div>
+                {project ? (
+                    <div className="projectModalBody">
+                        <div className="projectModalImage">
+                            {imageUrl != undefined && (
+                                <img src={imageUrl} alt="Loading..." />
+                            )}
+                        </div>
+                        <div className="projectModalSubheading">
+                            {project.subheading}
+                        </div>
+                        <div className="projectModalText">
+                            {project.bodyParagraphs.map((para: string) => {
+                                return (<p>{para}</p>)
+                            })}
+                        </div>
+                    </div>) : <Loading></Loading>
+                }
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default ProjectModal;
