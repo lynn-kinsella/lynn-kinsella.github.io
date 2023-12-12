@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as data from './content.json'
 import Loading from "./Loading";
+import { getImageUrl } from "./imageUtils";
 
 interface modalProps {
     props: modalData;
@@ -18,11 +19,13 @@ interface maxSchema {
     title: string;
     subheading: string;
     bodyParagraphs: string[];
+    imageID: number | null;
 }
 
 function ProjectModal({ props, exitModal }: modalProps) {
 
     const [project, setProject] = useState<maxSchema>();
+    const [imageUrl, setImageURL] = useState<string | undefined>();
 
     function loadProjectData() {
         setProject(data['projectsMax'][props.id]);
@@ -32,11 +35,17 @@ function ProjectModal({ props, exitModal }: modalProps) {
         loadProjectData();
     }, [props]);
 
+    useEffect(() => {
+        const url = project?.imageID != null ? getImageUrl(project.imageID.toString(), "png") : undefined;
+        setImageURL(url);
+    }, [project])
+
     function closeModal(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         event.preventDefault();
         if (event.target == event.currentTarget) {
             setProject(undefined);
-            exitModal()
+            setImageURL(undefined);
+            exitModal();
         }
     }
 
@@ -50,9 +59,11 @@ function ProjectModal({ props, exitModal }: modalProps) {
                     </div>
                     {project ? (
                         <div className="projectModalBody">
-                            <div className="projectModalImage">
-                                <img src={"src/assets/" + props.id + ".png"} alt="Loading..." />
-                            </div>
+                            {imageUrl != undefined && (
+                                <div className="projectModalImage">
+                                    <img src={imageUrl} alt="Loading..." />
+                                </div>
+                            )}
                             <div className="projectModalSubheading">
                                 {project.subheading}
                             </div>
@@ -64,8 +75,7 @@ function ProjectModal({ props, exitModal }: modalProps) {
                         </div>) : <Loading></Loading>
                     }
                 </div>
-            </div >
-
+            </div>
         )
     }
 }

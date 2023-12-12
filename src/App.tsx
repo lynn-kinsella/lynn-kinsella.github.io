@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
-import { projectData } from './ProjectButton'
+import { useState, useEffect } from 'react'
 import ProjectButton from './ProjectButton'
+
+import { getImageUrl } from './imageUtils';
 
 import * as data from './content.json'
 
@@ -42,7 +43,7 @@ function App() {
         <div className='header'>
           <div className='hero'>
             <div className='heroFrame'>
-              <img className="heroIMG" src="src/assets/subject.png" alt="Lynn" />
+              <img className="heroIMG" src={getImageUrl("subject", "png")} alt="Lynn" />
               <div className='heroText'>
                 <div className="heroTitle lynnPos">Lynn</div>
                 <div className="heroTitle kinsPos">Kinsella</div>
