@@ -17,7 +17,7 @@ import ProjectModal from './ProjectModal'
 
 function App() {
   const [modalState, setModalState] = useState<boolean>(false);
-  const [projectId, setProjectId] = useState<number>(0);
+  // const [projectId, setProjectId] = useState<number>(0);
   const [projectsList, setProjectsList] = useState<minSchema[]>();
   const [modal, setModal] = useState<JSX.Element>(<div></div>);
 
@@ -33,7 +33,7 @@ function App() {
     const newModal = <ProjectModal exitModal={exitModal} props={{ show: true, id: id, 'name': "Project Name" }}></ProjectModal>;
     setModal(newModal)
     setModalState(true)
-    setProjectId(id)
+    // setProjectId(id)
   }
   function exitModal() {
     setModal(<div></div>)
