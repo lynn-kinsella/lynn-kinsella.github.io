@@ -32,7 +32,8 @@
                 "The main loop was a state machine that took the raw signals, made predictions based on them (using a tensorflow model to predict the user's thought based on a buffer of samples or openCV to predict the direction the user is looking based on the placement of their irises). The results of these predictions were used to control internal speed and angle. Based on the predictions, in each iteration of the main loop the internal speed and angle were updated to step towards a target value. At the end of each loop, the internal speed and angle values were mapped to speeds for the left and right motors.",
                 "The biggest challenge in my role with Mobile Mind was integrating all the subsystems together. I accomplished this by breaking each subsystem into its own process, both for modularity and performance. The main loop could request the most up to date values from each process via shared queues, and update its internal state with new values if they became available. This had the effect of both decoupling the main loop from each subsystem, and decoupling the subsystems from each other, since the main loop would not need to block while waiting for a value from either subsystem. This accommodated for very different output rates of each subsystem, and guaranteed that the main loop always had access to the most up-to-date values from either subsystem.",
                 "This project is the biggest project I have seen through from start to finish, and I am very grateful to my team for putting in all the effort to make it a reality. It was incredibly rewarding to build a working prototype from nothing, based on an idea that we initially didn't even know was possible. I want to thank my team, Ridvan Song, Thomas Yoo, and Ben Pallottini for all their hard work and perspectives, and for being incredibly easy to work with despite this being a very stressful project for all of us."
-            ]
+            ],
+            "imageID": 0
         },
         {
             "title": "Crazy 8s",
@@ -43,7 +44,8 @@
                 "In order to persist the game data, we used a mongoDB database and modelled each game as an object that we could pull from the database and broadcast to the players. This object would slowly be populated as a player created the game, players joined, the game was started and played, and finally as it finished.",
                 "In hindsight, an SQL database would have been better suited for our needs in this project, as the client did not need the entire game object in order to render the changes that occurred on each turn.",
                 "This project was a great experience, especially as it involved collaboration with another developer. We made progress on the project by working separately throughout the week and merging our changes on pair programming sessions on the weekend, after which we would decide what needed to be done and who would do it during the following week."
-            ]
+            ],
+            "imageID": 1
         },
         {
             "title": "Matchmaking Bot",
@@ -55,7 +57,8 @@
                 "The bot takes in commands by reading incoming messages sent in the servers it is connected to, and filtering out messages that don't contain command keywords. After making the teams, the bot sends a message to the server and waits for users to react to that message to indicate that either team1 won, team 2 won, or the match was cancelled.",
                 "Once the match results are in, each player who participated has their win rates updated in a firebase firestore database. This database was set up to have a list of win-rates for each server, so that how you play with one group of friends doesn't necessarily correlate to how you play among another group.",
                 "This project was satisfying and fun to work through, as it was very easy to mock up the endpoints for user interaction and database, and then spend more time focusing on the matchmaking to ensure a more balanced user experience."
-            ]
+            ],
+            "imageID": null
         },
         {
             "title": "IV Calculator",
@@ -66,7 +69,8 @@
                 "I wrote a basic front-end in react-native that could snap a photo of the screen, send it to a back-end server, and wait for a response. The back end had three components, an image processing component that compensated for the perspective warp of the game screen, a character recognition component that read the stats from the compensated image using OCR, and a re-implemented version of the online stat calculator that the stats could be read into.",
                 "This project worked well for what it was, and I would be very interested to revisit it someday. I have a lot more experience with both machine learning and image processing techniques then I had when I threw this project together, and would love to create a more bespoke, performant, scalable solution using openCV, instead of relying on inefficient libraries that only partially solved the problems I had.",
                 "I would also change the front-end experience. In the app's current form, it relies totally on a remote website, and as such doesn't necessarily need to be a native app to accomplish its purpose. Being a website, for example, would improve compatibility across platforms, and even allow users to upload screenshots directly from their games. Alternatively, implementing the machine learning and image processing tasks on native code sounds like a challenging, but rewarding upgrade to this project."
-            ]
+            ],
+            "imageID": null
         }
     ]
 }

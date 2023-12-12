@@ -15,5 +15,6 @@
 
 body {
   background-image: url("./assets/backdrop.png");
+  background-color: #350802;
   background-repeat: repeat-y;
 }

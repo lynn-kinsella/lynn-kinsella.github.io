@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
-import { projectData } from './ProjectButton'
+import { useState, useEffect } from 'react'
 import ProjectButton from './ProjectButton'
+
+import { getImageUrl } from './imageUtils';
 
 import * as data from './content.json'
 
@@ -15,12 +16,13 @@ import './App.css'
 import ProjectModal from './ProjectModal'
 
 function App() {
-  const [modalState, setModalState] = useState<boolean>(false)
-  const [projectId, setProjectId] = useState<number>(0)
-  const [projectsList, setProjectsList] = useState<minSchema[]>()
+  const [modalState, setModalState] = useState<boolean>(false);
+  // const [projectId, setProjectId] = useState<number>(0);
+  const [projectsList, setProjectsList] = useState<minSchema[]>();
+  const [modal, setModal] = useState<JSX.Element>(<div></div>);
 
   function loadProjectData() {
-    setProjectsList(data["projectsMin"])
+    setProjectsList(data["projectsMin"]);
   }
 
   useEffect(() => {
@@ -28,21 +30,24 @@ function App() {
   }, []);
 
   function openModal(id: number) {
+    const newModal = <ProjectModal exitModal={exitModal} props={{ show: true, id: id, 'name': "Project Name" }}></ProjectModal>;
+    setModal(newModal)
     setModalState(true)
-    setProjectId(id)
+    // setProjectId(id)
   }
   function exitModal() {
+    setModal(<div></div>)
     setModalState(false)
   }
 
   return (
     <>
-      <ProjectModal exitModal={exitModal} props={{ show: modalState, id: projectId, 'name': "Project Name", desc: ["orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.n".repeat(1) + "}}}", "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.".repeat(1), "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.n".repeat(1) + "}}}", "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.".repeat(1)] }}></ProjectModal>
+      {modal}
       <div className={'container' + (modalState ? ' backgroundBlur' : '')}>
         <div className='header'>
           <div className='hero'>
             <div className='heroFrame'>
-              <img className="heroIMG" src="src/assets/subject.png" alt="Lynn" />
+              <img className="heroIMG" src={getImageUrl("subject", "png")} alt="Lynn" />
               <div className='heroText'>
                 <div className="heroTitle lynnPos">Lynn</div>
                 <div className="heroTitle kinsPos">Kinsella</div>
