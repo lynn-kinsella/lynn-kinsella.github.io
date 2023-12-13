@@ -93,7 +93,7 @@ function App() {
         </div>
         <div className='contentBackground' id='footer'>
           <div className='footerIcon'><i className='fab fa-linkedin fa-lg'></i></div>
-          <div className='footerText'>Made with 💖by  <br /> Lynn Kinsella</div>
+          <div className='footerText'>Made with 💖 by  <br /> Lynn Kinsella</div>
           <div className='footerIcon'><i className='fas fa-envelope fa-lg'></i></div>
         </div>
       </div>
