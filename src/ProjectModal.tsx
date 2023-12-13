@@ -15,7 +15,6 @@ export interface modalData {
 }
 
 interface maxSchema {
-    title: string;
     subheading: string;
     bodyParagraphs: string[];
     imageID: number | null;
@@ -52,7 +51,7 @@ function ProjectModal({ props, exitModal }: modalProps) {
         <div className="floatingModalContainer" onClick={closeModal} >
             <div className="projectModalContainer">
                 <div className="projectModalTopRow">
-                    <div className="projectModalTitle">{project ? project.title : "Loading..."}</div>
+                    <div className="projectModalTitle">{props.name}</div>
                     <div className="projectModalExit" onClick={closeModal}>X</div>
                 </div>
                 {project ? (

@@ -11,19 +11,18 @@
             "id": 1
         },
         {
-            "name": "Matchmaking Bot",
+            "name": "Match\u00ADmak\u00ADing Bot",
             "desc": "A discord bot to make fair games among friends.",
             "id": 2
         },
         {
-            "name": "IV Calculator",
+            "name": "IV Calc\u00ADul\u00ADator",
             "desc": "An android app that determines a pokemon's hidden stats from a photo.",
             "id": 3
         }
     ],
     "projectsMax": [
         {
-            "title": "Mobile Mind",
             "subheading": "A Hands Free EEG and Eye Tracking Controlled Electric Wheelchair",
             "bodyParagraphs": [
                 "Mobile Mind is a hands free electric wheelchair, controlled using input from an EEG headband and eye tracking camera. The wheelchair responds to the user's intent to accelerate and decelerate based on their brainwaves, and turns to the left and right based on where they are looking. This project was completed over the course of 8 months in a team of 3 other students as our final year capstone project at McMaster University.",
@@ -36,7 +35,6 @@
             "imageID": 0
         },
         {
-            "title": "Crazy 8s",
             "subheading": "A MERN app for playing a classic card game.",
             "bodyParagraphs": [
                 "Crazy 8s was a project I took up with a friend of mine, Elin Liu, with the goals of practicing front and back-end development in Javascript. The project was inspired by online games such as Kahoot, where users don't need to create an account, they can just join a friend's game with a generated code.",
@@ -48,7 +46,6 @@
             "imageID": 1
         },
         {
-            "title": "Matchmaking Bot",
             "subheading": "A discord bot that makes fair teams for inhouse online games.",
             "bodyParagraphs": [
                 "In mid-2021, a group of my friends found ourselves playing the videogame Valorant every night after school/work. A team in the standard mode is five players, but if a sixth friend joined, what would we do? The game has the option to make a custom lobby with smaller teams from the players in your party, so if a 6th person arrived, we would simply play 3v3.",
@@ -61,7 +58,6 @@
             "imageID": null
         },
         {
-            "title": "IV Calculator",
             "subheading": "An android app that determines a pokemon's hidden stats from a photo of its visible stats",
             "bodyParagraphs": [
                 "In 2022, I found myself playing a lot of Pokemon Sword, specifically hunting for strong and rare shiny pokemon. I found this task frustrating, because while you could tell if a pokemon was shiny from a glance, to check if its hidden stats, or IVs, were good or perfect, you had to plug all the visible stats into an online calculator, which was a hassle.",
