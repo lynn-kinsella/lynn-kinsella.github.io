@@ -12,7 +12,8 @@ interface minSchema {
 }
 
 
-import './App.css'
+import './AppDesktop.css'
+import './AppMobile.css'
 import ProjectModal from './ProjectModal'
 
 function App() {
@@ -92,7 +93,7 @@ function App() {
         </div>
         <div className='contentBackground' id='footer'>
           <div className='footerIcon'><i className='fab fa-linkedin fa-lg'></i></div>
-          <div className='footerText'>Made by Lynn Kinsella <br /> with 💖</div>
+          <div className='footerText'>Made with 💖by  <br /> Lynn Kinsella</div>
           <div className='footerIcon'><i className='fas fa-envelope fa-lg'></i></div>
         </div>
       </div>
