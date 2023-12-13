@@ -1,7 +1,7 @@
 @import '/node_modules/fontawesome-free/css/all.min.css';
 
 :root {
-  font-family: "Secular One", sans-serif !important;
+  font-family: 'Secular One', sans-serif !important;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
