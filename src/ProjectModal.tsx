@@ -53,7 +53,17 @@ function ProjectModal({ props, exitModal }: modalProps) {
         <div className="floatingModalContainer" onClick={closeModal} >
             <div className="projectModalContainer">
                 <div className="projectModalTopRow">
-                    <div className="projectModalTitle">{project?.link ? <a href={project.link} target="_blank" rel="noopener noreferrer">{props.name}</a> : <span>{props.name}</span>}</div>
+                    <div className="projectModalTitle">
+                        {project?.link ?
+                            <span onClick={() => {
+                                const w = window.open("https://silken.dev/calculator", "_blank", "noopener noreferrer");
+                                if (w) { w.opener = null; }
+                            }}>
+                                <a href="https://silken.dev/calculator">{props.name}</a>
+                            </span> :
+                            <span>{props.name}</span>
+                        }
+                    </div>
                     <div className="projectModalExit" onClick={closeModal}>X</div>
                 </div>
                 {project ? (
