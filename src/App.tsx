@@ -30,8 +30,8 @@ function App() {
     loadProjectData();
   }, []);
 
-  function openModal(id: number) {
-    const newModal = <ProjectModal exitModal={exitModal} props={{ show: true, id: id, 'name': "Project Name" }}></ProjectModal>;
+  function openModal(id: number, name: string) {
+    const newModal = <ProjectModal exitModal={exitModal} props={{ show: true, id: id, name: name }}></ProjectModal>;
     setModal(newModal)
     setModalState(true)
     // setProjectId(id)
@@ -84,7 +84,7 @@ function App() {
                 projectsList &&
                 projectsList.map(({ name, desc, id }) => {
                   return (
-                    <ProjectButton openModal={() => { openModal(id) }} props={{ name: name, desc: desc }} />
+                    <ProjectButton openModal={() => { openModal(id, name) }} props={{ name: name, desc: desc }} />
                   )
                 })
               }

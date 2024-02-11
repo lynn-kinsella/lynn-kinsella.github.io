@@ -18,6 +18,7 @@ interface maxSchema {
     subheading: string;
     bodyParagraphs: string[];
     imageID: number | null;
+    link: string;
 }
 
 function ProjectModal({ props, exitModal }: modalProps) {
@@ -31,7 +32,8 @@ function ProjectModal({ props, exitModal }: modalProps) {
 
     useEffect(() => {
         loadProjectData();
-    }, [props]);
+        console.log("loading project data")
+    }, []);
 
     useEffect(() => {
         const url = project?.imageID != null ? getImageUrl(project.imageID.toString(), "png") : undefined;
@@ -51,15 +53,13 @@ function ProjectModal({ props, exitModal }: modalProps) {
         <div className="floatingModalContainer" onClick={closeModal} >
             <div className="projectModalContainer">
                 <div className="projectModalTopRow">
-                    <div className="projectModalTitle">{props.name}</div>
+                    <div className="projectModalTitle">{project?.link ? <a href={project.link} target="_blank" rel="noopener noreferrer">{props.name}</a> : <span>{props.name}</span>}</div>
                     <div className="projectModalExit" onClick={closeModal}>X</div>
                 </div>
                 {project ? (
                     <div className="projectModalBody">
                         <div className="projectModalImage">
-                            {imageUrl != undefined && (
-                                <img src={imageUrl} alt="Loading..." />
-                            )}
+                            <img src={imageUrl} alt="Loading..." />
                         </div>
                         <div className="projectModalSubheading">
                             {project.subheading}
