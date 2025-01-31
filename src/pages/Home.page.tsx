@@ -14,6 +14,7 @@ import heroImage from '../assets/Hero Splash.png';
 import svraid1 from '../assets/svraid-1.png';
 import svraid2 from '../assets/svraid-2.png';
 import svraid3 from '../assets/svraid-3.png';
+import { Link } from 'react-router-dom';
 
 export function HomePage() {
   return (
@@ -42,7 +43,10 @@ export function HomePage() {
 
 function Hero() {
   return (
-    <div className=" w-[100%] rounded-xl relative overflow-clip" style={{height: `calc(100vh - 2rem)`}}>
+    <div
+      className=" w-[100%] rounded-xl relative overflow-clip"
+      style={{ height: `calc(100vh - 2rem)` }}
+    >
       <HeroFrame rotation={30} x="0vw" y="-20vh" fliph flipv />
       <HeroFrame rotation={150} x="0vw" y="120vh" flipv />
       <HeroFrame rotation={-30} x="calc(100vw - 40vw - 2rem)" y="-20vh" />
@@ -190,21 +194,21 @@ function CaseStudies() {
         <Flex direction="row" className="w-[100%] justify-between px-16">
           <CaseStudyButton
             title="Flip & Floss"
-            link="/case/flip-&-floss"
+            link="case/flip-&-floss"
             skills={['Leadership', 'Design', 'Communication']}
             images={[flip1, flip2, flip3]}
             bg="#143C30"
           />
           <CaseStudyButton
             title="Cafe Compass"
-            link="/case/cafe-compass"
+            link="case/cafe-compass"
             skills={['Leadership', 'Design', 'Communication']}
             images={[cafe1, cafe2, cafe3]}
             bg="#6B1B1B"
           />
           <CaseStudyButton
             title="SV Raids"
-            link="/case/sv-raids"
+            link="case/sv-raids"
             skills={['Leadership', 'Design', 'Communication']}
             images={[svraid1, svraid2, svraid3]}
             bg="#C1A749"
@@ -225,7 +229,8 @@ interface CaseStudyButtonProp {
 function CaseStudyButton({ link, title, skills, images, bg }: CaseStudyButtonProp) {
   return (
     <Flex direction="column" className="gap-4 w-[25%]">
-      <a href={link} className="">
+      {/* <a href={link} className=""> */}
+      <Link to={`/${link}`}>
         <div
           className="rounded-xl p-4 transition origin-center hover:scale-105 hover:shadow-light-sm"
           style={{ backgroundColor: bg }}
@@ -245,14 +250,17 @@ function CaseStudyButton({ link, title, skills, images, bg }: CaseStudyButtonPro
             </Flex>
           </Flex>
         </div>
-      </a>
-      <a href={link}>
+      </Link>
+      {/* </a> */}
+      {/* <a href={`/#/${link}`}> */}
+      <Link to={`/${link}`}>
         <div className="text-center light-gradient rounded-xl px-4 py-2">
           <Title fw={700} className="underline">
             {title}
           </Title>
         </div>
-      </a>
+      </Link>
+      {/* </a> */}
     </Flex>
   );
 }
