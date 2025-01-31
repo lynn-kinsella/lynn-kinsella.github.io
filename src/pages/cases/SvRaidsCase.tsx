@@ -397,10 +397,10 @@ function CaseStudyPanel({ title, images, content, index, final = false }: CaseSt
         {images}
       </Flex>
       <Flex direction="row" justify={final ? 'end' : 'center'} align="end" className="px-[5%]">
-        <Text>To Top</Text>
+        {final && <Text>To Top</Text>}
         <Anchor
           onClick={() => {
-            const elementIndex = final?0:index+1;            
+            const elementIndex = final ? 0 : index + 1;
             const target = document.getElementById(`Panel-${elementIndex}`);
             target?.scrollIntoView({ behavior: 'smooth' });
           }}
