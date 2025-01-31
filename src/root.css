@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #131417;
+  --shadow-light-sm: -4px 4px 40px 0px rgba(255, 255, 255, 0.50);
+  --shadow-frame-0: 16px 16px 32px 0px rgba(0, 0, 0, 0.25);
+  --shadow-frame-1: -16px 16px 32px 0px rgba(0, 0, 0, 0.25);
+  --shadow-frame-2: 16px -16px 32px 0px rgba(0, 0, 0, 0.25);
+  --shadow-frame-3: -16px -16px 32px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  background: var(--color-bg-dark);
+
+}
+
+.light-gradient {
+  background: linear-gradient(180deg, rgba(201, 251, 196, 0.15) 0%, rgba(184, 199, 232, 0.15) 12.5%, rgba(233, 175, 146, 0.15) 25%, rgba(201, 251, 196, 0.15) 37.5%, rgba(184, 199, 232, 0.15) 50%, rgba(233, 175, 146, 0.15) 62.5%, rgba(184, 199, 232, 0.15) 75%, rgba(201, 251, 196, 0.15) 87.5%, rgba(233, 175, 146, 0.15) 100%), #FFF;
+}
+
+.case-inset {
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}

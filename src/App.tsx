@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import './root.css';
 
 import { MantineProvider } from '@mantine/core';
 import { Router } from './Router';
