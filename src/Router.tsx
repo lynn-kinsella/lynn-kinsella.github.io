@@ -39,6 +39,6 @@ const router = createBrowserRouter(
 );
 
 export function Router() {
-  return <RouterProvider router={router} />;
-  // return hashRouter
+  // return <RouterProvider router={router} />;
+  return hashRouter
 }
