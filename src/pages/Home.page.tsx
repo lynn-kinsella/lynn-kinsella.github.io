@@ -26,7 +26,7 @@ export function HomePage() {
         <Title className="text-center text-bg-dark font-bold leading-loose ">Get In Touch</Title>
         <div className="self-stretch p-2 justify-center items-center gap-4 inline-flex overflow-hidden">
           <Text size="48px">
-            <Anchor href="www.linkedin.com/in/lynnkinsella">
+            <Anchor href="https://www.linkedin.com/in/lynnkinsella">
               <FontAwesomeIcon className="text-bg-dark" icon={faLinkedin} />
             </Anchor>
           </Text>
@@ -52,14 +52,14 @@ function Hero() {
       <HeroFrame rotation={-30} x="calc(100vw - 40vw - 2rem)" y="-20vh" />
       <HeroFrame rotation={210} x="calc(100vw - 40vw - 2rem)" y="120vh" fliph />
       <HeroTitle />
-      <Image src={heroImage} />
+      <Image src={heroImage} className='h-[100%]'/>
     </div>
   );
 }
 
 function HeroTitle() {
   return (
-    <div className="absolute bottom-0 flex flex-col w-[100%] items-center gap-4 pb-24">
+    <div className="absolute bottom-0 flex flex-col w-[100%] items-center gap-4 pb-[5vh]">
       <div className="light-gradient p-4 rounded-xl">
         <Title>Lynn Kinsella</Title>
         <Text size="xl">UX Designer</Text>
