@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Anchor, Flex, Text, Title } from '@mantine/core';
+import { Flex, Text, Title } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
 interface CaseStudyHeaderProps {

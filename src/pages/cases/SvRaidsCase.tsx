@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Flex, Text, Title } from '@mantine/core';
+import { Anchor, Flex, Text } from '@mantine/core';
 import { Layout } from '@/components/Layout';
 import sec1img1 from '../../assets/sv1-1-1.png';
 import sec1img2 from '../../assets/sv1-1-2.png';
@@ -20,6 +20,8 @@ import sec7img1 from '../../assets/sv7-1.png';
 import sec7img2 from '../../assets/sv7-2.png';
 import sec7img3 from '../../assets/sv7-3.png';
 import { CaseStudyHeader } from './CaseStudyHeader';
+import { CaptionImage } from './CaptionImage';
+import { CaseStudyPanel } from './CaseStudyPanel';
 
 export function SvRaidsCase() {
   return (
@@ -342,124 +344,4 @@ export function SvRaidsCase() {
       {/* </CaseStudyBody> */}
     </Layout>
   );
-}
-interface CaptionImageProps {
-  src: string;
-  caption: string;
-  maxh?: string;
-  maxw?: string;
-}
-
-function CaptionImage({ src, caption, maxh = '50%', maxw = '100%' }: CaptionImageProps) {
-  return (
-    <Flex direction="column" align="center" style={{ maxHeight: maxh, maxWidth: maxw }}>
-      <Flex
-        direction="column"
-        justify="center"
-        content="end"
-        className="rounded-xl w-auto h-auto drop-shadow-lg overflow-clip"
-      >
-        <img
-          src={src}
-          alt={caption}
-          className="max-h-[100%] w-auto contain"
-          style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }}
-        />
-      </Flex>
-      <Text className="">{caption}</Text>
-    </Flex>
-  );
-}
-
-interface CaseStudyPanelProps {
-  title: string;
-  images: React.ReactNode;
-  content: React.ReactNode;
-  index: number;
-  final?: boolean;
-}
-function CaseStudyPanel({ title, images, content, index, final = false }: CaseStudyPanelProps) {
-  return (
-    <Flex
-      direction="column"
-      id={`Panel-${index}`}
-      className="light-gradient rounded-xl p-4 w-[100%] gap-4"
-      style={{ height: 'calc(100vh - 2rem)' }}
-    >
-      <Flex direction="row" className="gap-4 h-0 grow rounded-xl">
-        <Flex
-          direction="column"
-          className="w-[100%] gap-8 overflow-y-scroll max-h-[100%] case-inset rounded-xl  p-4"
-        >
-          <Title>{`${index}. ${title}`}</Title>
-          {content}
-        </Flex>
-        {images}
-      </Flex>
-      <Flex direction="row" justify={final ? 'end' : 'center'} align="end" className="px-[5%]">
-        {final && <Text>To Top</Text>}
-        <Anchor
-          onClick={() => {
-            const elementIndex = final ? 0 : index + 1;
-            const target = document.getElementById(`Panel-${elementIndex}`);
-            target?.scrollIntoView({ behavior: 'smooth' });
-          }}
-        >
-          <svg
-            style={{ rotate: final ? '180deg' : '0' }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="60"
-            height="69"
-            viewBox="0 0 60 69"
-            fill="none"
-          >
-            <path
-              d="M27.1716 67.32C28.7337 68.8821 31.2663 68.8821 32.8284 67.32L58.2843 41.8642C59.8464 40.3021 59.8464 37.7694 58.2843 36.2073C56.7222 34.6452 54.1895 34.6452 52.6274 36.2073L30 58.8347L7.37258 36.2073C5.81049 34.6452 3.27783 34.6452 1.71573 36.2073C0.153631 37.7694 0.153631 40.3021 1.71573 41.8642L27.1716 67.32ZM26 0.806335V64.4916H34V0.806335H26Z"
-              fill="black"
-            />
-          </svg>
-        </Anchor>
-      </Flex>
-    </Flex>
-  );
-}
-
-// interface CaseStudyBodyProps {
-//   children: React.ReactNode[];
-// }
-
-// function CaseStudyBody({ children }: CaseStudyBodyProps) {
-//   const [scrollIndex, { increment, decrement }] = useCounter(0);
-//   const [prevScroll, setPrevScroll] = useState(-1);
-//   const [scrollTimeout, setScrollTimeout] = useState<number>(Date.now());
-//   function forceScroll(e: Event) {
-//     e.stopPropagation();
-//     e.preventDefault();
-//     if (Date.now() > scrollTimeout) {
-//       setScrollTimeout(Date.now() + 20000);
-//       if (window.scrollY > prevScroll) {
-//         increment();
-//       } else {
-//         decrement();
-//       }
-//     }
-//   }
-
-//   useEffect(() => {
-//     const element = document.getElementById(`Pane-${scrollIndex}`);
-//     console.log(scrollIndex)
-//     console.log(element);
-//     if (element !== null) {
-//       element.scrollIntoView({behavior:"smooth"});
-//       setPrevScroll(window.scrollY);
-//     }
-//   }, [scrollIndex]);
-
-//   useEffect(() => {
-//     addEventListener('scroll', forceScroll);
-//     return () => {
-//       removeEventListener('scroll', forceScroll);
-//     };
-//   }, []);
-//   return <div className='max-h-[100vh] overflow-hidden'>{children}</div>;
-// }
+}                     
