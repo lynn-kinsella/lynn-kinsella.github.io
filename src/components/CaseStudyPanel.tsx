@@ -32,7 +32,7 @@ export function CaseStudyPanel({ title, images, content, index, final = false }:
           onClick={() => {
             const elementIndex = final ? 0 : index + 1;
             const target = document.getElementById(`Panel-${elementIndex}`);
-            target?.scrollIntoView({ behavior: 'smooth' });
+            target?.scrollIntoView({ behavior: 'smooth', block: "start" });
           }}
         >
           <svg

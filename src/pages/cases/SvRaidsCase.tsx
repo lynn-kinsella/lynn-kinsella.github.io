@@ -19,9 +19,9 @@ import sec6img3 from '../../assets/sv6-3.png';
 import sec7img1 from '../../assets/sv7-1.png';
 import sec7img2 from '../../assets/sv7-2.png';
 import sec7img3 from '../../assets/sv7-3.png';
-import { CaseStudyHeader } from './CaseStudyHeader';
-import { CaptionImage } from './CaptionImage';
-import { CaseStudyPanel } from './CaseStudyPanel';
+import { CaseStudyHeader } from '../../components/CaseStudyHeader';
+import { CaptionImage } from '../../components/CaptionImage';
+import { CaseStudyPanel } from '../../components/CaseStudyPanel';
 
 export function SvRaidsCase() {
   return (
@@ -35,7 +35,7 @@ export function SvRaidsCase() {
             direction="column"
             content="center"
             justify="space-evenly"
-            className="w-[40%] h-[100%]"
+            className="w-[40%] h-[100%] p-4"
           >
             <CaptionImage src={sec1img1} caption="Pokemon Scarlet & Violet" />
             <CaptionImage src={sec1img2} caption="Raid Search Interface" />
@@ -81,7 +81,7 @@ export function SvRaidsCase() {
             direction="column"
             content="center"
             justify="space-evenly"
-            className="w-[40%] h-[100%]"
+            className="w-[40%] h-[100%] p-4"
           >
             <CaptionImage src={sec2img1} caption="Gamewith Bulletin Board" />
             <CaptionImage src={sec2img2} caption="r/Pokemon Discord Channel" />
@@ -142,7 +142,7 @@ export function SvRaidsCase() {
             direction="column"
             content="center"
             justify="space-evenly"
-            className="w-[40%] h-[100%]"
+            className="w-[40%] h-[100%] p-4"
           >
             <CaptionImage src={sec3img1} caption="Hosting User Task Flow" />
             <CaptionImage src={sec3img2} caption="Host Form Concept" />
@@ -186,7 +186,7 @@ export function SvRaidsCase() {
             content="center"
             align="center"
             justify="space-between"
-            className="w-[100%] h-[100%]"
+            className="w-[100%] h-[100%] p-4"
           >
             <CaptionImage src={sec4img1} caption="Initial Design" maxw="30%" maxh="100%" />
             <CaptionImage src={sec4img2} caption="Colours Iteration" maxw="30%" maxh="100%" />
@@ -227,7 +227,7 @@ export function SvRaidsCase() {
             direction="column"
             content="center"
             justify="space-evenly"
-            className="w-[150%] h-[100%]"
+            className="w-[150%] h-[100%] p-4"
           >
             <CaptionImage src={sec5img1} caption="Raid Host Flow Client-Server Architecture" />
             <CaptionImage
@@ -262,7 +262,7 @@ export function SvRaidsCase() {
             direction="column"
             content="center"
             justify="space-evenly"
-            className="w-[40%] h-[100%]"
+            className="w-[40%] h-[100%] p-4"
           >
             <CaptionImage src={sec6img2} caption="Discord Night-Mode Feedback" />
             <CaptionImage src={sec6img1} caption="Discord Colour Feedback" />
