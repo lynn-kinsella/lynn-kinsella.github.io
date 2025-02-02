@@ -231,7 +231,7 @@ export function FlipFlossCase() {
               redesign for their kids app.
             </Text>
             <Text size="xl">
-              Pending permission, the Figma prototype of the onboarding flow will be available here.
+              The Figma prototype of the onboarding flow is available here.
             </Text>
           </Flex>
         }
